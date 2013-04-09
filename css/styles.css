@@ -1,0 +1,54 @@
+/*
+Yusra Ahmed
+Project 2: Web App Part 2
+October 3, 2012
+VFW 1210
+*/
+body {
+    background: #b6b4f1;
+    margin: 10px;
+    border: solid #6960db;
+    padding: 15px;
+    width: 270px;
+
+}
+header{
+    display: inline-block;
+    background: #cfcdfb;
+    border: solid #6960db;
+    padding-left: 20px;
+    font-family: fantasy;
+}
+a {
+    outline: solid thin blue;
+}
+a:hover {
+    color: #fff;
+}
+fieldset {
+    border: double #000;
+}
+input:focus {
+    border: inset #666;
+}
+textarea:focus {
+    border: inset #666;
+}
+input#save {
+    background: #99e4e3;
+    border: inherit #5ea6a5;
+}
+input#save:hover {
+    background: #55dcf9;
+    border: solid #4cbad2;
+}
+input#save:active {
+    background: #1ddedc;
+    border: inherit #1aafad;
+}
+ul {
+    background: #cfcdfb;
+}
+legend {
+    font-family: sans-serif;
+}

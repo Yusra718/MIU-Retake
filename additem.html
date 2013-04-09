@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- Here is where the "Customize Sandwich" link leads to -->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="My first HTML document" />
+        <meta name="keywords" content="sulaiMANNY's gourmet, sandwich, Order" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="user-scalable=no, width=device-width" />
+        <title>sulaiMANNY's Sandwiches</title>
+        <link href="css/styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>My Sandwich</h1>
+        <nav>
+            <a href="#" id="clearstoreddata">Clear All Sandwiches</a>
+            <a href="#" id="displaydata">My Sandwiches</a>
+            <a href="additem.html" id="addsandwich" style="display: none">Add Sandwich</a>
+        </nav>
+        <form action="" method="post" id="sandwichForm">
+            <fieldset>
+                <legend>Sandwich Details</legend>
+                <ul id="errors"></ul>
+                <ul>
+                    <li>White or Whole Wheat?:
+                        <ul id="breadCol">
+                            <li><input type="radio" value="White" id="white" name="bread" /><label for="white">White</label></li>
+                            <li><input type="radio" value="Whole Wheat" id="wholewheat" name="bread" /><label for="wholewheat">Whole Wheat</label></li>
+                        </ul>
+                    </li>
+                    <li id="select"><label for="bread">Type of Bread</label></li>
+                    <li>What do you want in your sandwich?
+                        <ul id="meat">
+                            <li><input type="checkbox" value="Turkey" id="turkey" name="meat" /><label for="turkey">Turkey</label></li>
+                            <li><input type="checkbox" value="Chicken" id="chicken" name="meat" /><label for="chicken">Chicken</label></li>
+                            <li><input type="checkbox" value="Pastrami" id="pastrami" name="meat" /><label for="pastrami">Pastrami</label></li>
+                            <li><input type="checkbox" value="Beef Bacon" id="beefbacon" name="meat" /><label for="beefbacon">Beef Bacon</label></li>
+                            <li><input type="checkbox" value="No Meat" id="nomeat" name="meat" /><label for="nomeat">No Meat</label></li>
+                        </ul>
+                    </li>
+                    <li>Would you like any of the following?
+                        <ul>
+                            <li><input type="checkbox" value="Tomatoes" id="tomatoes" name="other" /><label for="tomatoes">Tomatoes</label></li>
+                            <li><input type="checkbox" value="Pickles" id="pickles" name="other" /><label for="pickles">Pickles</label></li>
+                            <li><input type="checkbox" value="Onions" id="onions" name="other" /><label for="onions">Onions</label></li>
+                            <li><input type="checkbox" value="Lettuce" id="lettuce" name="other" /><label for="lettuce">Lettuce</label></li>
+                            <li><input type="checkbox" value="No" id="no" name="other" /><label for="no">No</label></li>
+                        </ul>
+                    </li>
+                    <li>Would you like some cheese?
+                        <ul>
+                            <li><input type="checkbox" value="American Cheese" id="americancheese" name="cheese" /><label for="americancheese">American Cheese</label></li>
+                            <li><input type="checkbox" value="Monterey Jack Cheese" id="montereyjackcheese" name="cheese" /><label for="montereyjackcheese">Monterey Jack Cheese</label></li>
+                            <li><input type="checkbox" value="Parmesan Cheese" id="parmesancheese" name="cheese" /><label for="parmesancheese">Parmesan Cheese</label></li>
+                            <li><input type="checkbox" value="No Cheese" id="nocheese" name="cheese" /><label for="nocheese">No Cheese</label></li>
+                        </ul>
+                    </li>
+                    <li>Condiments?
+                        <ul>
+                            <li><input type="checkbox" value="Mayo" id="mayo" name="condiments" /><label for="mayo">Mayo</label></li>
+                            <li><input type="checkbox" value="Ketchup" id="ketchup" name="condiments" /><label for="ketchup">Ketchup</label></li>
+                            <li><input type="checkbox" value="Mustard" id="mustard" name="condiments" /><label for="mustard">Mustard</label></li>
+                            <li><input type="checkbox" value="Hot Sauce" id="hotsauce" name="condiments" /><label for="hotsauce">Hot Sauce</label></li>
+                            <li><input type="checkbox" value="No Condiments" id="nocondiments" name="condiments" /><label for="nocondiments">No Condiments</label></li>
+                        </ul>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>Delivery</legend>
+                <ul>
+                    <li>Which do you prefer?
+                        <ul>
+                            <li><input type="radio" value="Delivery" id="delivery" name="delivery" />Delivery (New York only)</li>
+                            <li><input type="radio" value="Pick-Up" id="pickup" name="delivery" />Pick-Up</li>
+                        </ul>
+                    </li>
+                    <li id="address" style="display:none">Please fill out the address form:
+                        <ul>
+                            <li><label for="house">House #:</label><input type="text" id="house" style="display:none" /></li>
+                            <li><label for="street">Street:</label><input type="text" id="street" style="display:none" /></li>
+                            <li><label for="city">City:</label><input type="text" id="city" style="display:none" /></li>
+                            <li><label for="zip">Zip Code:</label><input type="text" id="zip" style="display:none" /></li>
+                            <li><label for="notes">Delivery Requests?</label><textarea id="notes" style="display:none"></textarea></li>
+                        </ul>
+                    </li>
+                </ul>
+            </fieldset>
+            <input type="submit" id= "save" value="Save my Sandwich">
+        </form>
+        <script src="js/main.js" type="text/javascript"></script>
+    </body>
+</html>
