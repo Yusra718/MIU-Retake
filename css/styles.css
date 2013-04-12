@@ -7,26 +7,48 @@ VFW 1210
 body {
     background: #b6b4f1;
     margin: 10px;
-    border: solid #6960db;
-    padding: 15px;
-    width: 270px;
+    /*border: solid #6960db;*/
+    /*padding: 15px;*/
+    width: 280px;
 
 }
 header{
     display: inline-block;
     background: #cfcdfb;
     border: solid #6960db;
-    padding-left: 20px;
+    padding: 0 20px;
     font-family: fantasy;
 }
-a {
-    outline: solid thin blue;
+li#breadLink{
+    display: block;
+    background: #cfcdfb;
+}
+li#meatLink{
+    display: block;
+    background: #cfcdfb;
+}
+li#veggieLink{
+    display: block;
+    background: #cfcdfb;
+}
+li#cheeseLink{
+    display: block;
+    background: #cfcdfb;
+}
+li#condimentsLink{
+    display: block;
+    background: #cfcdfb;
+}
+li#deliveryLink{
+    display: block;
+    background: #cfcdfb;
 }
 a:hover {
     color: #fff;
 }
 fieldset {
     border: double #000;
+    background: #cfcdfb
 }
 input:focus {
     border: inset #666;
@@ -45,9 +67,6 @@ input#save:hover {
 input#save:active {
     background: #1ddedc;
     border: inherit #1aafad;
-}
-ul {
-    background: #cfcdfb;
 }
 legend {
     font-family: sans-serif;

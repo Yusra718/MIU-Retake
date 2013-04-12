@@ -22,15 +22,15 @@
                 <legend>Sandwich Details</legend>
                 <ul id="errors"></ul>
                 <ul>
-                    <li>White or Whole Wheat?:
-                        <ul id="breadCol">
+                    <li id="breadCol">White or Whole Wheat?:
+                        <ul>
                             <li><input type="radio" value="White" id="white" name="bread" /><label for="white">White</label></li>
                             <li><input type="radio" value="Whole Wheat" id="wholewheat" name="bread" /><label for="wholewheat">Whole Wheat</label></li>
+                            <li id="select"><label for="bread">Type of Bread</label></li>
                         </ul>
                     </li>
-                    <li id="select"><label for="bread">Type of Bread</label></li>
-                    <li>What do you want in your sandwich?
-                        <ul id="meat">
+                    <li id="meat">What do you want in your sandwich?
+                        <ul>
                             <li><input type="checkbox" value="Turkey" id="turkey" name="meat" /><label for="turkey">Turkey</label></li>
                             <li><input type="checkbox" value="Chicken" id="chicken" name="meat" /><label for="chicken">Chicken</label></li>
                             <li><input type="checkbox" value="Pastrami" id="pastrami" name="meat" /><label for="pastrami">Pastrami</label></li>
@@ -38,7 +38,7 @@
                             <li><input type="checkbox" value="No Meat" id="nomeat" name="meat" /><label for="nomeat">No Meat</label></li>
                         </ul>
                     </li>
-                    <li>Would you like any of the following?
+                    <li id="other">Would you like any of the following?
                         <ul>
                             <li><input type="checkbox" value="Tomatoes" id="tomatoes" name="other" /><label for="tomatoes">Tomatoes</label></li>
                             <li><input type="checkbox" value="Pickles" id="pickles" name="other" /><label for="pickles">Pickles</label></li>
@@ -47,7 +47,7 @@
                             <li><input type="checkbox" value="No" id="no" name="other" /><label for="no">No</label></li>
                         </ul>
                     </li>
-                    <li>Would you like some cheese?
+                    <li id="cheese">Would you like some cheese?
                         <ul>
                             <li><input type="checkbox" value="American Cheese" id="americancheese" name="cheese" /><label for="americancheese">American Cheese</label></li>
                             <li><input type="checkbox" value="Monterey Jack Cheese" id="montereyjackcheese" name="cheese" /><label for="montereyjackcheese">Monterey Jack Cheese</label></li>
@@ -55,7 +55,7 @@
                             <li><input type="checkbox" value="No Cheese" id="nocheese" name="cheese" /><label for="nocheese">No Cheese</label></li>
                         </ul>
                     </li>
-                    <li>Condiments?
+                    <li id="condiments">Condiments?
                         <ul>
                             <li><input type="checkbox" value="Mayo" id="mayo" name="condiments" /><label for="mayo">Mayo</label></li>
                             <li><input type="checkbox" value="Ketchup" id="ketchup" name="condiments" /><label for="ketchup">Ketchup</label></li>
@@ -69,7 +69,7 @@
             <fieldset>
                 <legend>Delivery</legend>
                 <ul>
-                    <li>Which do you prefer?
+                    <li id="receiveOrder">Which do you prefer?
                         <ul>
                             <li><input type="radio" value="Delivery" id="delivery" name="delivery" />Delivery (New York only)</li>
                             <li><input type="radio" value="Pick-Up" id="pickup" name="delivery" />Pick-Up</li>
@@ -88,6 +88,7 @@
             </fieldset>
             <input type="submit" id= "save" value="Save my Sandwich">
         </form>
+        <script src="js/JSON.js" type="text/javascript"></script>        
         <script src="js/main.js" type="text/javascript"></script>
     </body>
 </html>

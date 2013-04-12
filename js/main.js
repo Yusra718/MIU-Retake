@@ -1,6 +1,8 @@
 // Yusra Ahmed
-// Project 2: Web App Part 2
-// VFW Term 1210
+// New App for MiU Retake
+// MiU Term 1304
+
+window.onLoad
 
 window.addEventListener("DOMContentLoaded", function() {
 
@@ -99,26 +101,36 @@ window.addEventListener("DOMContentLoaded", function() {
         }else{
             id = key;
         }
+        meatValues();
+        extraValues();
+        cheeseValues();
+        condimentValues();
         selectedBreadColor();
         selectDelivery();
         var sandwich = {};
             sandwich.bcolor         = ["White/Whole Wheat:", bcValue];
             sandwich.breadtype      = ["Type of Bread:", getId("bread").value];
             sandwich.meat           = ["Meat(s):", selectedMeats];
-            sandwich.anyelse        = ["Other Thing(s):", selectedExtras];
+            sandwich.anyelse        = ["Extra(s):", selectedExtras];
             sandwich.cheese         = ["Cheese(s):", selectedCheese];
             sandwich.condiments     = ["Condiment(s):", selectedCondiments];
             sandwich.delivery       = ["Get food by:", delValue];
-            sandwich.house          = ["House Number:", h.value];
-            sandwich.street         = ["Street:", st.value];
-            sandwich.city           = ["City:", city.value];
-            sandwich.zip            = ["Zip Code:", zip.value];
-            sandwich.requests       = ["Requests/Notes:", notes.value];
+            if(delValue == "Delivery"){
+                sandwich.house          = ["House Number:", h.value];
+                sandwich.street         = ["Street:", st.value];
+                sandwich.city           = ["City:", city.value];
+                sandwich.zip            = ["Zip Code:", zip.value];
+                sandwich.requests       = ["Requests/Notes:", notes.value];
+            }
         localStorage.setItem(id, JSON.stringify(sandwich));
         alert("Saved!");
     };
     
     function getData() {
+        if(localStorage.length === 0){
+            alert("You have not added any sandwiches, so we added some examples.");
+            defaultData();
+        }
         toggleDisplay("on");
         var makeDiv = document.createElement("div");
         makeDiv.setAttribute("id", "sandwich");
@@ -159,7 +171,7 @@ window.addEventListener("DOMContentLoaded", function() {
         deletion.href = "#";
         deletion.key = key;
         var deleteText = "Delete Sandwich";
-        //deletion.addEventListener("click", deleteSandwich);
+        deletion.addEventListener("click", deleteSandwich);
         deletion.innerHTML = deleteText;
         links.appendChild(deletion);
         deletion.style.display = "inline-block"
@@ -169,6 +181,7 @@ window.addEventListener("DOMContentLoaded", function() {
     function clearData() {
         if (localStorage.length === 0) {
             alert("Nothing to clear!")
+            window.location.reload();
         } else {
             localStorage.clear();
             alert("Data Cleared!");
@@ -183,7 +196,7 @@ window.addEventListener("DOMContentLoaded", function() {
         toggleDisplay("off");
 
         var breadColor = document.forms[0].bread;
-        for(var h=0; h<breadColor.length; i++){
+        for(var h=0; h<breadColor.length; h++){
             if (breadColor[h].value == "White" && sandwich.bcolor[1] == "White"){
                 breadColor[h].setAttribute("checked", "checked");
             } else if(breadColor[h].value == "Whole Wheat" && sandwich.bcolor[1] == "Whole Wheat"){
@@ -193,7 +206,7 @@ window.addEventListener("DOMContentLoaded", function() {
 
         getId("bread").value = sandwich.breadtype[1];
         
-        for(var i=0, j=sandwich.meat.length; i<j; i++){
+        for(var i=0, j=sandwich.meat[1].length; i<j; i++){
             for(var k=0, l=meats.length; k<l; k++){
                 if(sandwich.meat[1][i] == meats[k].value){
                     meats[k].setAttribute("checked", "checked");
@@ -201,43 +214,7 @@ window.addEventListener("DOMContentLoaded", function() {
             }
         }
 
-        // if(sandwich.meat[1][0] == "Turkey"){
-        //     tu.setAttribute("checked", "checked");
-        // }if(sandwich.meat[1][1] == "Turkey"){
-        //     tu.setAttribute("checked", "checked");
-        // }if(sandwich.meat[1][2] == "Turkey"){
-        //     tu.setAttribute("checked", "checked");
-        // }if(sandwich.meat[1][3] == "Turkey"){
-        //     tu.setAttribute("checked", "checked");
-        // }if(sandwich.meat[1][0] == "Chicken"){
-        //     ch.setAttribute("checked", "checked");
-        // }if(sandwich.meat[1][1] == "Chicken"){
-        //     ch.setAttribute("checked", "checked");
-        // }if(sandwich.meat[1][2] == "Chicken"){
-        //     ch.setAttribute("checked", "checked");
-        // }if(sandwich.meat[1][3] == "Chicken"){
-        //     ch.setAttribute("checked", "checked");
-        // }if(sandwich.meat[1][0] == "Pastrami"){
-        //     pa.setAttribute("checked", "checked");
-        // }if(sandwich.meat[1][1] == "Pastrami"){
-        //     pa.setAttribute("checked", "checked");
-        // }if(sandwich.meat[1][2] == "Pastrami"){
-        //     pa.setAttribute("checked", "checked");
-        // }if(sandwich.meat[1][3] == "Pastrami"){
-        //     pa.setAttribute("checked", "checked");
-        // }if(sandwich.meat[1][0] == "Beef Bacon"){
-        //     bb.setAttribute("checked", "checked");
-        // }if(sandwich.meat[1][1] == "Beef Bacon"){
-        //     bb.setAttribute("checked", "checked");
-        // }if(sandwich.meat[1][2] == "Beef Bacon"){
-        //     bb.setAttribute("checked", "checked");
-        // }if(sandwich.meat[1][3] == "Beef Bacon"){
-        //     bb.setAttribute("checked", "checked");
-        // }if(sandwich.meat[1][0] == "No Meat"){
-        //     nm.setAttribute("checked", "checked");
-        // }
-
-        for(var m=0, n=sandwich.anyelse.length; m<n; m++){
+        for(var m=0, n=sandwich.anyelse[1].length; m<n; m++){
             for(var o=0, p=others.length; o<p; o++){
                 if(sandwich.anyelse[1][m] == others[o].value){
                     others[o].setAttribute("checked", "checked");
@@ -245,43 +222,7 @@ window.addEventListener("DOMContentLoaded", function() {
             }
         }
 
-        // if(sandwich.anyelse[1][0] == "Tomatoes"){
-        //     tm.setAttribute("checked", "checked");
-        // }if(sandwich.anyelse[1][1] == "Tomatoes"){
-        //     tm.setAttribute("checked", "checked");
-        // }if(sandwich.anyelse[1][2] == "Tomatoes"){
-        //     tm.setAttribute("checked", "checked");
-        // }if(sandwich.anyelse[1][3] == "Tomatoes"){
-        //     tm.setAttribute("checked", "checked");
-        // }if(sandwich.anyelse[1][0] == "Pickles"){
-        //     pi.setAttribute("checked", "checked");
-        // }if(sandwich.anyelse[1][1] == "Pickles"){
-        //     pi.setAttribute("checked", "checked");
-        // }if(sandwich.anyelse[1][2] == "Pickles"){
-        //     pi.setAttribute("checked", "checked");
-        // }if(sandwich.anyelse[1][3] == "Pickles"){
-        //     pi.setAttribute("checked", "checked");
-        // }if(sandwich.anyelse[1][0] == "Onions"){
-        //     on.setAttribute("checked", "checked");
-        // }if(sandwich.anyelse[1][1] == "Onions"){
-        //     on.setAttribute("checked", "checked");
-        // }if(sandwich.anyelse[1][2] == "Onions"){
-        //     on.setAttribute("checked", "checked");
-        // }if(sandwich.anyelse[1][3] == "Onions"){
-        //     on.setAttribute("checked", "checked");
-        // }if(sandwich.anyelse[1][0] == "Lettuce"){
-        //     le.setAttribute("checked", "checked");
-        // }if(sandwich.anyelse[1][1] == "Lettuce"){
-        //     le.setAttribute("checked", "checked");
-        // }if(sandwich.anyelse[1][2] == "Lettuce"){
-        //     le.setAttribute("checked", "checked");
-        // }if(sandwich.anyelse[1][3] == "Lettuce"){
-        //     le.setAttribute("checked", "checked");
-        // }if(sandwich.anyelse[1][0] == "No"){
-        //     no.setAttribute("checked", "checked");
-        // }
-
-        for(var q=0, r=sandwich.cheese.length; q<r; q++){
+        for(var q=0, r=sandwich.cheese[1].length; q<r; q++){
             for(var s=0, t=cheeses.length; s<t; s++){
                 if(sandwich.cheese[1][q] == cheeses[s].value){
                     cheeses[s].setAttribute("checked", "checked");
@@ -289,29 +230,7 @@ window.addEventListener("DOMContentLoaded", function() {
             }
         }
 
-        // if(sandwich.cheese[1][0] == "Amercan Cheese"){
-        //     ac.setAttribute("checked", "checked");
-        // }if(sandwich.cheese[1][1] == "Amercan Cheese"){
-        //     ac.setAttribute("checked", "checked");
-        // }if(sandwich.cheese[1][2] == "Amercan Cheese"){
-        //     ac.setAttribute("checked", "checked");
-        // }if(sandwich.cheese[1][0] == "Monterey Jack Cheese"){
-        //     mjc.setAttribute("checked", "checked");
-        // }if(sandwich.cheese[1][1] == "Monterey Jack Cheese"){
-        //     mjc.setAttribute("checked", "checked");
-        // }if(sandwich.cheese[1][2] == "Monterey Jack Cheese"){
-        //     mjc.setAttribute("checked", "checked");
-        // }if(sandwich.cheese[1][0] == "Parmesan Cheese"){
-        //     pc.setAttribute("checked", "checked");
-        // }if(sandwich.cheese[1][1] == "Parmesan Cheese"){
-        //     pc.setAttribute("checked", "checked");
-        // }if(sandwich.cheese[1][2] == "Parmesan Cheese"){
-        //     pc.setAttribute("checked", "checked");
-        // }if(sandwich.cheese[1][0] == "No Cheese"){
-        //     nc.setAttribute("checked", "checked");
-        // }
-
-        for(var u=0, v=sandwich.condiments.length; u<v; u++){
+        for(var u=0, v=sandwich.condiments[1].length; u<v; u++){
             for(var w=0, x=condiments.length; w<x; w++){
                 if(sandwich.condiments[1][u] == condiments[w].value){
                     condiments[w].setAttribute("checked", "checked");
@@ -319,66 +238,49 @@ window.addEventListener("DOMContentLoaded", function() {
             }
         }
 
-        // if(sandwich.condiments[1][0] == "Mayo"){
-        //     mayo.setAttribute("checked", "checked");
-        // }if(sandwich.condiments[1][1] == "Mayo"){
-        //     mayo.setAttribute("checked", "checked");
-        // }if(sandwich.condiments[1][2] == "Mayo"){
-        //     mayo.setAttribute("checked", "checked");
-        // }if(sandwich.condiments[1][3] == "Mayo"){
-        //     mayo.setAttribute("checked", "checked");
-        // }if(sandwich.condiments[1][0] == "Ketchup"){
-        //     ke.setAttribute("checked", "checked");
-        // }if(sandwich.condiments[1][1] == "Ketchup"){
-        //     ke.setAttribute("checked", "checked");
-        // }if(sandwich.condiments[1][2] == "Ketchup"){
-        //     ke.setAttribute("checked", "checked");
-        // }if(sandwich.condiments[1][3] == "Ketchup"){
-        //     ke.setAttribute("checked", "checked");
-        // }if(sandwich.condiments[1][0] == "Mustard"){
-        //     must.setAttribute("checked", "checked");
-        // }if(sandwich.condiments[1][1] == "Mustard"){
-        //     must.setAttribute("checked", "checked");
-        // }if(sandwich.condiments[1][2] == "Mustard"){
-        //     must.setAttribute("checked", "checked");
-        // }if(sandwich.condiments[1][3] == "Mustard"){
-        //     must.setAttribute("checked", "checked");
-        // }if(sandwich.condiments[1][0] == "Hot Sauce"){
-        //     hs.setAttribute("checked", "checked");
-        // }if(sandwich.condiments[1][1] == "Hot Sauce"){
-        //     hs.setAttribute("checked", "checked");
-        // }if(sandwich.condiments[1][2] == "Hot Sauce"){
-        //     hs.setAttribute("checked", "checked");
-        // }if(sandwich.condiments[1][3] == "Hot Sauce"){
-        //     hs.setAttribute("checked", "checked");
-        // }if(sandwich.condiments[1][0] == "No Condiments"){
-        //     noCon.setAttribute("checked", "checked");
-        // }
-
         var delivered = document.forms[0].delivery;
         for(var y=0; y<delivered.length; y++){
             if (delivered[y].value == "Delivery" && sandwich.delivery[1] == "Delivery"){
                 delivered[y].setAttribute("checked", "checked");
+                getId("address").style.display = "block";
+                getId("house").style.display = "block";
+                getId("street").style.display = "block";
+                getId("city").style.display = "block";
+                getId("zip").style.display = "block";
+                getId("notes").style.display = "block";
+                getId("house").value = sandwich.house[1];
+                getId("street").value = sandwich.street[1];
+                getId("city").value = sandwich.city[1];
+                getId("zip").value = sandwich.zip[1];
+                getId("notes").value = sandwich.requests[1];
             } else if(delivered[y].value == "Pick-Up" && sandwich.delivery[1] == "Pick-Up"){
                 delivered[y].setAttribute("checked", "checked");
+                getId("address").style.display = "none";
             }
         }
-        getId("house").value = sandwich.house[1];
-        getId("street").value = sandwich.street[1];
-        getId("city").value = sandwich.city[1];
-        getId("zip").value = sandwich.zip[1];
-        getId("notes").value = sandwich.requests[1];
 
-        save.removeEventListener("click", validate);
+        // save.removeEventListener("click", validate);
 
-        getId("save").value = "Edit Sandwich";
         var editSave = getId("save");
+        editSave.value = "Edit Sandwich";
         editSave.addEventListener("click", validate);
         editSave.key = this.key;
     }
 
-    function validate(e){
-        var getBreadColor = document.forms[0].bread,
+    function deleteSandwich(){
+        var ask = confirm("Remove Sandwich?");
+        if(ask){
+            localStorage.removeItem(this.key);
+            window.location.reload();
+        }else{
+            alert("Sandwich NOT removed.");
+        }
+    }
+
+    function validate(eventData){
+        errMsg.innerHTML = "";
+        var errMsgAry = [],
+            getBreadColor = document.forms[0].bread,
             breadColorArry = [],
             getBreadType = getId("bread"),
             getMeat = document.forms[0].meat,
@@ -394,108 +296,134 @@ window.addEventListener("DOMContentLoaded", function() {
             getHouseNumber = getId("house"),
             getStreet = getId("street"),
             getCity = getId("city"),
-            getZipCode = getId("zip"),
-            errMsgAry = []
+            getZipCode = getId("zip")
+            
         ;
-        for(var i=0; i<getBreadColor.length;i++){
-            var breadLi = getId("bread") + "_" + i;
-            if (breadLi.checked){
-                breadColorArry.push(breadLi);
+        for(var i=0; i<getBreadColor.length; i++){
+            // var breadLi = getId("bread");
+            if(getBreadColor[i].checked){
+                breadColorArry.push(getBreadColor[i].value);
             }
         }
+
         if(breadColorArry.length === 0){
             var bcError = "Please choose White or Whole Wheat.";
-            getId("breadCol").style.border = "#666";
+            getId("breadCol").style.border = "1px solid red";
             errMsgAry.push(bcError);
+        } else if(breadColorArry.length >= 1){
+            getId("breadCol").style.border = "none";
         }
-        if(getBreadType === "What would you like?"){
+
+        if(getBreadType.value === "What would you like?"){
             var btError = "Please choose the type of bread you would like."
-            getBreadType.style.color = "#666";
+            getBreadType.style.border = "1px solid red";
             errMsgAry.push(btError);
+        } else {
+            getBreadType.style.border = "none";
         }
+
         for(var j=0; j<getMeat.length;j++){
-            var meatLi = getId("meat") + "_" + j;
-            if (meatLi.checked){
-                meatArry.push(meatLi);
+            // var meatLi = getId("meat");
+            if (meats[j].checked){
+                meatArry.push(meats[j].value);
             }
         }
+
         if(meatArry.length === 0){
             var meatError = "Please choose some meat or select 'No Meat'.";
-            getId("meat").style.color = "#666";
+            getId("meat").style.border = "1px solid red";
             errMsgAry.push(meatError);
+        } else if(meatArry.length >=1){
+            getId("meat").style.border = "none";
         }
+
         for(var k=0; k<getOthers.length; k++){
-            var othersLi = getId("other") + "_" + k;
-            if(othersLi.checked){
-                othersArry.push(othersLi);
+            // var othersLi = getId("other");
+            if(others[k].checked){
+                othersArry.push(others[k].value);
             }
         }
         if(othersArry.length === 0){
             var otherError = "Please choose some veggies or select 'No'.";
-            getId("other").style.color = "#666";
+            getId("other").style.border = "1px solid red";
             errMsgAry.push(otherError);
+        } else if(othersArry.length >= 1){
+            getId("other").style.border = "none";
         }
+
         for(var l=0; l<getCheese.length; l++){
-            var cheeseLi = getId("cheese") + "_" + l;
-            if(cheeseLi.checked){
-                cheeseArry.push(cheeseLi);
+            // var cheeseLi = getId("cheese");
+            if(cheeses[l].checked){
+                cheeseArry.push(cheeses[l].value);
             }
         }
         if(cheeseArry.length === 0){
             var cheeseError = "Please select a cheese or select 'No Cheese'.";
-            getId("cheese").style.color = "#666";
+            getId("cheese").style.border = "1px solid red";
             errMsgAry.push(cheeseError);
+        } else if(cheeseArry.length >= 1){
+            getId("cheese").style.border = "none";
         }
+
         for(var m=0; m<getCondiments.length; m++){
-            var condimentsLi = getId("condiments") + "_" + m;
-            if(condimentsLi.checked){
-                condimentsArry.push(condimentsLi);
+            // var condimentsLi = getId("condiments");
+            if(condiments[m].checked){
+                condimentsArry.push(condiments[m].value);
             }
         }
         if(condimentsArry.length === 0){
             var conError = "Please select some condiments or select 'No Condiments'.";
-            getId("condiments").style.color = "#666";
+            getId("condiments").style.border = "1px solid red";
             errMsgAry.push(conError);
+        } else if(condimentsArry.length >= 1){
+            getId("condiments").style.border = "none";
         }
         for(var n=0; n<getDelivery.length; n++){
-            var deliLi = getId("delivery") + "_" + n;
-            if(deliLi.checked){
-                deliveryArry.push(deliLi);
+            // var deliLi = getId("delivery");
+            if(getDelivery[n].checked){
+                deliveryArry.push(getDelivery[n].value);
             }
         }
        if(deliveryArry.length === 0){
             var deliError = "Please select how you will receive you order.";
-            getId("delivery").style.color = "#666";
+            getId("receiveOrder").style.border = "1px solid red";
             errMsgAry.push(deliError);
-        }
-        if(del.checked){
-            if(getHouseNumber === ""){
-                var houseError = "Please enter your house number.";
-                getHouseNumber.style.color = "#666";
-                errMsgAry.push(houseError)
-            }if(getStreet === ""){
-                var streetError = "Please enter your street.";
-                getStreet.style.color = "#666";
-                errMsgAry.push(streetError);
-            }if(getCity === ""){
-                var cityError = "Please enter your street.";
-                getCity.style.color = "#666";
-                errMsgAry.push(cityError);
-            }if(getZipCode === ""){
-                var zipError = "Please enter your zip code.";
-                getZipCode.style.color = "#666";
-                errMsgAry.push(zipError)
+        } else if(deliveryArry.length >= 1){
+            getId("receiveOrder").style.border = "none";
+            if(deliveryArry[0] == "Delivery"){
+                if(getHouseNumber.value === ""){
+                    var houseError = "Please enter your house number.";
+                    getHouseNumber.style.border = "1px solid red";
+                    errMsgAry.push(houseError);
+                }if(getStreet.value === ""){
+                    var streetError = "Please enter your street.";
+                    getStreet.style.border = "1px solid red";
+                    errMsgAry.push(streetError);
+                }if(getCity.value === ""){
+                    var cityError = "Please enter your city.";
+                    getCity.style.border = "1px solid red";
+                    errMsgAry.push(cityError);
+                }if(getZipCode.value === ""){
+                    var zipError = "Please enter your zip code.";
+                    getZipCode.style.border = "1px solid red";
+                    errMsgAry.push(zipError);
+                }
             }
         }
-        if(errMsgAry >=1){
+
+        if(errMsgAry.length >=1){
             for(var o=0, p=errMsgAry.length; o<p; o++){
                 var createErrorLi = document.createElement("li");
-                createErrorLi.innerHTML = errMsgAry[i];
+                createErrorLi.innerHTML = errMsgAry[o];
                 errMsg.appendChild(createErrorLi);
+                errMsg.style.color = "red";
             }
+            eventData.preventDefault();
+            return false;
+        } else {
+            storeData(this.key);
+            window.location.reload();
         }
-        e.preventDefault();
-        return false;
     }   
 
     function meatValues(){
@@ -610,6 +538,13 @@ window.addEventListener("DOMContentLoaded", function() {
         }
     };
     
+    function defaultData(){
+        for(var d in json){
+            var id = Math.floor(Math.random()*100001);
+            localStorage.setItem(id, JSON.stringify(json[d]));
+        }
+    }
+
     // toggles the display of the address form
     function pickUp() {
         if (pu.checked) {
@@ -620,12 +555,12 @@ window.addEventListener("DOMContentLoaded", function() {
             notes.style.display = "none",
             addressForm.style.display = "none"
         } else if (del.checked){
-            h.style.display = "inline-block",
-            st.style.display = "inline-block",
-            city.style.display = "inline-block",
-            zip.style.display = "inline-block",
-            notes.style.display = "inline-block",
-            addressForm.style.display = "inline-block"
+            h.style.display = "block",
+            st.style.display = "block",
+            city.style.display = "block",
+            zip.style.display = "block",
+            notes.style.display = "block",
+            addressForm.style.display = "block"
         }
     };
     
@@ -636,8 +571,8 @@ window.addEventListener("DOMContentLoaded", function() {
     noCon.addEventListener("click", noCondiments);
     pu.addEventListener("click", pickUp);
     del.addEventListener("click", pickUp);
-    displayData.addEventListener("click", validate);
-    save.addEventListener("click", storeData);
+    displayData.addEventListener("click", getData);
+    save.addEventListener("click", validate);
     clear.addEventListener("click", clearData);
     
 });

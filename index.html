@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <!-- Yusra Ahmed -->
-<!-- Visual Frameworks -->
-<!-- Term 1210 -->
-<!-- Project: Web App Part 1-->
+<!-- Mobile Interfaces & Usability -->
+<!-- Term 1304 -->
+<!-- New App for Retake -->
 <html>
     <head>
         <meta charset="utf-8" />
@@ -15,10 +15,17 @@
     </head>
     <body>
         <header>
-            <h1><small><i>Sulai</i></small> MANNY's Gourmet</h1>
+            <h1 style="font-size:14pt"><small><i>Sulai</i></small> MANNY's Gourmet</h1>
+            <a href="additem.html" id="feature"><img src="Images/Sandwich.jpg" height="100" width="200" /></a> 
         </header>
-        <div>Customize your sandwich and order!</div>
-        <h2>Get Started</h2>
-        <a href="additem.html" title="Customize Sandwich">Customize Sandwich</a>
+        <input type="search" placeholder="Search"/>
+        <ul>Start With...
+            <li id="breadLink"><a href="additem.html#breadCol">Bread</a></li>
+            <li id="meatLink"><a href="additem.html#meat">Meats</a></li>
+            <li id="veggieLink"><a href="additem.html#other">Vegetables</a></li>
+            <li id="cheeseLink"><a href="additem.html#cheese">Cheese</a></li>
+            <li id="condimentsLink"><a href="additem.html#condiments">Condiments</a></li>
+            <li id="deliveryLink"><a href="additem.html#receiveOrder">Pick Up/Delivery</a></li>
+        </ul>
     </body>
 </html>
