@@ -1,0 +1,73 @@
+/*
+Yusra Ahmed
+Project 2: Web App Part 2
+October 3, 2012
+VFW 1210
+*/
+body {
+    background: #b6b4f1;
+    margin: 10px;
+    /*border: solid #6960db;*/
+    /*padding: 15px;*/
+    width: 280px;
+
+}
+header{
+    display: inline-block;
+    background: #cfcdfb;
+    border: solid #6960db;
+    padding: 0 20px;
+    font-family: fantasy;
+}
+li#breadLink{
+    display: block;
+    background: #cfcdfb;
+}
+li#meatLink{
+    display: block;
+    background: #cfcdfb;
+}
+li#veggieLink{
+    display: block;
+    background: #cfcdfb;
+}
+li#cheeseLink{
+    display: block;
+    background: #cfcdfb;
+}
+li#condimentsLink{
+    display: block;
+    background: #cfcdfb;
+}
+li#deliveryLink{
+    display: block;
+    background: #cfcdfb;
+}
+a:hover {
+    color: #fff;
+}
+fieldset {
+    border: double #000;
+    background: #cfcdfb
+}
+input:focus {
+    border: inset #666;
+}
+textarea:focus {
+    border: inset #666;
+}
+input#save {
+    background: #99e4e3;
+    border: inherit #5ea6a5;
+}
+input#save:hover {
+    background: #55dcf9;
+    border: solid #4cbad2;
+}
+input#save:active {
+    background: #1ddedc;
+    border: inherit #1aafad;
+}
+legend {
+    font-family: sans-serif;
+}
