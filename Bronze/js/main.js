@@ -2,8 +2,6 @@
 // New App for MiU Retake
 // MiU Term 1304
 
-window.onLoad
-
 window.addEventListener("DOMContentLoaded", function() {
 
     function getId(id) {

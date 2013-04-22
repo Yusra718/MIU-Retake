@@ -1,8 +1,6 @@
 /*
 Yusra Ahmed
-Project 2: Web App Part 2
-October 3, 2012
-VFW 1210
+MIU TERM 1304
 */
 body {
     background: #b6b4f1;
@@ -19,7 +17,7 @@ header{
     padding: 0 20px;
     font-family: fantasy;
 }
-li#breadLink{
+/*li#breadLink{
     display: block;
     background: #cfcdfb;
 }
@@ -42,13 +40,13 @@ li#condimentsLink{
 li#deliveryLink{
     display: block;
     background: #cfcdfb;
-}
+}*/
 a:hover {
     color: #fff;
 }
 fieldset {
     border: double #000;
-    background: #cfcdfb
+    background: #E3BD84
 }
 input:focus {
     border: inset #666;

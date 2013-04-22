@@ -22,22 +22,26 @@
                 <h1 style="font-size:14pt"><small><i>Sulai</i></small> MANNY's Gourmet</h1>
             </div>
             <div data-role="content">
-                <a href="additem.html" id="feature"><img src="Images/Sandwich.jpg" height="100" width="200" /></a> 
-                <ul id="categories" data-filter="true">Start With...
-                    <li id="breadLink"><a data-ajax="false" href="additem.html#breadCol">Bread</a></li>
-                    <li id="meatLink"><a data-ajax="false" href="additem.html#meat">Meats</a></li>
-                    <li id="veggieLink"><a data-ajax="false" href="additem.html#other">Vegetables</a></li>
-                    <li id="cheeseLink"><a data-ajax="false" href="additem.html#cheese">Cheese</a></li>
-                    <li id="condimentsLink"><a data-ajax="false" href="additem.html#condiments">Condiments</a></li>
-                    <li id="deliveryLink"><a data-ajax="false" href="additem.html#receiveOrder">Pick Up/Delivery</a></li>
+                <a data-ajax="false" href="additem.html" id="feature"><img src="Images/Sandwich.jpg" height="100" width="200" /></a>
+                <br/>
+                Start With...
+                <br/>
+                <br/>
+                <ul data-role="listview" data-filter="true" data-inset="true">
+                    <li><a href="#breadCol"><img src="Images/Bread.jpeg" height="100" width="100"/>Bread</a></li>
+                    <li><a href="#meat"><img src="Images/Meat.jpeg" height="100" width="100"/>Meats</a></li>
+                    <li><a href="#other"><img src="Images/Vegetables.jpeg" height="100" width="100"/>Vegetables</a></li>
+                    <li><a href="#cheese"><img src="Images/Cheese.jpeg" height="100" width="100"/>Cheese</a></li>
+                    <li><a href="#condiments"><img src="Images/Condiments.jpeg" height="100" width="100"/>Condiments</a></li>
+                    <li><a href="#receiveOrder"><img src="Images/Delivery.jpg" height="100" width="100"/>"Pick Up/Delivery</a></li>
                 </ul>
             </div>
             <div data-role="footer">
-                <div data-role="navbar">
+                <div data-role="navbar" data-id="navigation" data-position="fixed">
                     <ul>
                         <li><a href="#home" data-icon="home" data-iconpos="top" class="ui-btn-active">Home</a></li>
                         <li><a href="#info" data-icon="info" data-iconpos="top">About</a></li>
-                        <li><a href="#new" data-icon="star" data-iconpos="top">New!</a></li>
+                        <li><a href="#github" data-icon="star" data-iconpos="top">New!</a></li>
                     </ul>
                 </div>
             </div>
@@ -47,34 +51,216 @@
                 <h1>About</h1>
             </div>
             <div data-role="content">
-                
+                <ul data-role="listview">
+                    <li><a href="#aboutAuthor">About the Author</a></li>
+                    <li><a href="#credits">Credits</a></li>
+                    <li><a href="../Bronze/index.html" data-ajax="false">Bronze App</a></li>
+                </ul>
             </div>
             <div data-role="footer">
-                <div data-role="navbar">
+                <div data-role="navbar" data-id="navigation" data-position="fixed">
                     <ul>
                         <li><a href="#home" data-icon="home" data-iconpos="top">Home</a></li>
                         <li><a href="#info" data-icon="info" data-iconpos="top" class="ui-btn-active">About</a></li>
-                        <li><a href="#new" data-icon="star" data-iconpos="top">New!</a></li>
+                        <li><a href="#github" data-icon="star" data-iconpos="top">New!</a></li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div data-role="page" id="new">
+        <div data-role="page" id="github">
             <div data-role="header">
-                <h1>New</h1>
+                <h1>GitHub Pages</h1>
             </div>
             <div data-role="content">
-
+                <ul data-role="listview">
+                    <li><a href="#">Gold gh-pages</a></li>
+                    <li><a href="#">Bronze gh-pages</a></li>
+                    <li><a href="https://github.com/Yusra718/MIU-Retake" data-ajax="false">Github Repository</a></li>
+                </ul>
             </div>
             <div data-role="footer">
-                <div data-role="navbar">
+                <div data-role="navbar" data-id="navigation" data-position="fixed">
                     <ul>
                         <li><a href="#home" data-icon="home" data-iconpos="top">Home</a></li>
                         <li><a href="#info" data-icon="info" data-iconpos="top">About</a></li>
-                        <li><a href="#new" data-icon="star" data-iconpos="top" class="ui-btn-active">New!</a></li>
+                        <li><a href="#github" data-icon="star" data-iconpos="top" class="ui-btn-active">New!</a></li>
                     </ul>
                 </div>
             </div>
         </div>
+        <div data-role="page" id="aboutAuthor">
+            <div data-role="header">
+                <h1> About the Author </h1>
+            </div>
+            <div data-role="content">
+                <p>Yusra Ahmed is a student enrolled at Full Sail University. As of April 2013, she is attending the course of Mobile Interfaces and Usability.</p>
+            </div>
+            <div data-role="footer">
+                <div data-role="navbar" data-id="navigation" data-position="fixed">
+                    <ul>
+                        <li><a href="#home" data-icon="home" data-iconpos="top">Home</a></li>
+                        <li><a href="#info" data-icon="info" data-iconpos="top" class="ui-btn-active">About</a></li>
+                        <li><a href="#github" data-icon="star" data-iconpos="top">New!</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="credits">
+            <div data-role="header">
+                <h1> Credits </h1>
+            </div>
+            <div data-role="content">
+                <p>All pictures were taken from google images.</p>
+            </div>
+            <div data-role="footer">
+                <div data-role="navbar" data-id="navigation" data-position="fixed">
+                    <ul>
+                        <li><a href="#home" data-icon="home" data-iconpos="top">Home</a></li>
+                        <li><a href="#info" data-icon="info" data-iconpos="top" class="ui-btn-active">About</a></li>
+                        <li><a href="#github" data-icon="star" data-iconpos="top">New!</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="breadCol">
+            <div data-role="header">
+                <h1> Bread </h1>
+            </div>
+            <div data-role="content">
+                <ul data-role="listview">
+                    <li><input type="radio" value="White" id="white" name="bread" /><label for="white">White</label></li>
+                    <li><input type="radio" value="Whole Wheat" id="wholewheat" name="bread" /><label for="wholewheat">Whole Wheat</label></li>
+                    <li id="select"><label for="bread">Type of Bread</label></li>
+                </ul>
+            </div>
+            <div data-role="footer">
+                <div data-role="navbar" data-id="navigation" data-position="fixed">
+                    <ul>
+                        <li><a href="#home" data-icon="home" data-iconpos="top">Home</a></li>
+                        <li><a href="#info" data-icon="info" data-iconpos="top">About</a></li>
+                        <li><a href="#github" data-icon="star" data-iconpos="top">New!</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page"  id="meat">
+            <div data-role="header">
+                <h1> Meat </h1>
+            </div>
+            <div data-role="content">
+                <ul data-role="listview">
+                    <li><input type="checkbox" value="Turkey" id="turkey" name="meat" /><img height="100" width="100" src="Images/turkey.jpeg" /><label for="turkey">Turkey</label></li>
+                    <li><input type="checkbox" value="Chicken" id="chicken" name="meat" /><img height="100" width="100" src="Images/chicken.jpeg" /><label for="chicken">Chicken</label></li>
+                    <li><input type="checkbox" value="Pastrami" id="pastrami" name="meat" /><img height="100" width="100" src="Images/pastrami.jpeg" /><label for="pastrami">Pastrami</label></li>
+                    <li><input type="checkbox" value="Beef Bacon" id="beefbacon" name="meat" /><img height="100" width="100" src="Images/beefbacon.jpeg" /><label for="beefbacon">Beef Bacon</label></li>
+                    <li><input type="checkbox" value="No Meat" id="nomeat" name="meat" /><img height="100" width="100" src="Images/no.jpeg" /><label for="nomeat">No Meat</label></li>
+                </ul>
+            </div>
+            <div data-role="footer">
+                <div data-role="navbar" data-id="navigation" data-position="fixed">
+                    <ul>
+                        <li><a href="#home" data-icon="home" data-iconpos="top">Home</a></li>
+                        <li><a href="#info" data-icon="info" data-iconpos="top">About</a></li>
+                        <li><a href="#github" data-icon="star" data-iconpos="top">New!</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="other">
+            <div data-role="header">
+                <h1> Vegetables </h1>
+            </div>
+            <div data-role="content">
+                <ul data-role="listview">
+                    <li><input type="checkbox" value="Tomatoes" id="tomatoes" name="other" /><img height="100" width="100" src="Images/tomatoes.jpeg" /><label for="tomatoes">Tomatoes</label></li>
+                    <li><input type="checkbox" value="Pickles" id="pickles" name="other" /><img height="100" width="100" src="Images/pickles.jpeg" /><label for="pickles">Pickles</label></li>
+                    <li><input type="checkbox" value="Onions" id="onions" name="other" /><img height="100" width="100" src="Images/onions.jpeg" /><label for="onions">Onions</label></li>
+                    <li><input type="checkbox" value="Lettuce" id="lettuce" name="other" /><img height="100" width="100" src="Images/lettuce.jpeg" /><label for="lettuce">Lettuce</label></li>
+                    <li><input type="checkbox" value="No" id="no" name="other" /><img height="100" width="100" src="Images/no.jpeg" /><label for="no">No</label></li>
+                </ul>
+            </div>
+            <div data-role="footer">
+                <div data-role="navbar" data-id="navigation" data-position="fixed">
+                    <ul>
+                        <li><a href="#home" data-icon="home" data-iconpos="top">Home</a></li>
+                        <li><a href="#info" data-icon="info" data-iconpos="top">About</a></li>
+                        <li><a href="#github" data-icon="star" data-iconpos="top">New!</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="cheese">
+            <div data-role="header">
+                <h1> Cheese </h1>
+            </div>
+            <div data-role="content">
+                <ul data-role="listview">
+                    <li><input type="checkbox" value="American Cheese" id="americancheese" name="cheese" /><img height="100" width="100" src="Images/americanCheese.jpeg" /><label for="americancheese">American Cheese</label></li>
+                    <li><input type="checkbox" value="Monterey Jack Cheese" id="montereyjackcheese" name="cheese" /><img height="100" width="100" src="Images/montereyjackCheese.jpeg" /><label for="montereyjackcheese">Monterey Jack Cheese</label></li>
+                    <li><input type="checkbox" value="Parmesan Cheese" id="parmesancheese" name="cheese" /><img height="100" width="100" src="Images/parmesanCheese.jpeg" /><label for="parmesancheese">Parmesan Cheese</label></li>
+                    <li><input type="checkbox" value="No Cheese" id="nocheese" name="cheese" /><img height="100" width="100" src="Images/no.jpeg" /><label for="nocheese">No Cheese</label></li>
+                </ul>
+            </div>
+            <div data-role="footer">
+                <div data-role="navbar" data-id="navigation" data-position="fixed">
+                    <ul>
+                        <li><a href="#home" data-icon="home" data-iconpos="top">Home</a></li>
+                        <li><a href="#info" data-icon="info" data-iconpos="top">About</a></li>
+                        <li><a href="#github" data-icon="star" data-iconpos="top">New!</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="condiments">
+            <div data-role="header">
+                <h1> Condiments </h1>
+            </div>
+            <div data-role="content">
+                <ul data-role="listview">
+                    <li><input type="checkbox" value="Mayo" id="mayo" name="condiments" /><img height="100" width="100" src="Images/mayo.jpeg" /><label for="mayo">Mayo</label></li>
+                    <li><input type="checkbox" value="Ketchup" id="ketchup" name="condiments" /><img height="100" width="100" src="Images/ketchup.jpeg" /><label for="ketchup">Ketchup</label></li>
+                    <li><input type="checkbox" value="Mustard" id="mustard" name="condiments" /><img height="100" width="100" src="Images/mustard.jpeg" /><label for="mustard">Mustard</label></li>
+                    <li><input type="checkbox" value="Hot Sauce" id="hotsauce" name="condiments" /><img height="100" width="100" src="Images/hotsauce.jpeg" /><label for="hotsauce">Hot Sauce</label></li>
+                    <li><input type="checkbox" value="No Condiments" id="nocondiments" name="condiments" /><img height="100" width="100" src="Images/no.jpeg" /><label for="nocondiments">No Condiments</label></li>
+                </ul>
+            </div>
+            <div data-role="footer">
+                <div data-role="navbar" data-id="navigation" data-position="fixed">
+                    <ul>
+                        <li><a href="#home" data-icon="home" data-iconpos="top">Home</a></li>
+                        <li><a href="#info" data-icon="info" data-iconpos="top">About</a></li>
+                        <li><a href="#github" data-icon="star" data-iconpos="top">New!</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="receiveOrder">
+            <div data-role="header">
+                <h1> Pick Up/Delivery </h1>
+            </div>
+            <div data-role="content">
+                <ul data-role="listview">
+                    <li><input type="radio" value="Delivery" id="delivery" name="delivery" /><label for="delivery">Delivery (New York only)</label></li>
+                    <li><input type="radio" value="Pick-Up" id="pickup" name="delivery" /><label for="pickup">Pick-Up</label></li>
+                </ul>
+                <ul data-role="listview" id="address"><br/>If yes, please fill out the address form:
+                    <li><label for="house">House #:</label><input type="text" id="house"/></li>
+                    <li><label for="street">Street:</label><input type="text" id="street"/></li>
+                    <li><label for="city">City:</label><input type="text" id="city"/></li>
+                    <li><label for="zip">Zip Code:</label><input type="text" id="zip"/></li>
+                    <li><label for="notes">Delivery Requests?</label><textarea id="notes" placeholde="If you have any additional requests..."></textarea></li>
+                </ul>
+            </div>
+            <div data-role="footer">
+                <div data-role="navbar" data-id="navigation" data-position="fixed">
+                    <ul>
+                        <li><a href="#home" data-icon="home" data-iconpos="top">Home</a></li>
+                        <li><a href="#info" data-icon="info" data-iconpos="top">About</a></li>
+                        <li><a href="#github" data-icon="star" data-iconpos="top">New!</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="js/main.js" type="text/javascript"></script>
     </body>
 </html>

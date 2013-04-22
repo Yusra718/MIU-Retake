@@ -2,8 +2,6 @@
 // New App for MiU Retake
 // MiU Term 1304
 
-window.onLoad
-
 window.addEventListener("DOMContentLoaded", function() {
 
     function getId(id) {
@@ -94,7 +92,7 @@ window.addEventListener("DOMContentLoaded", function() {
                 return false;
         }
     }
-    
+
     function storeData(key){
         if(!key){
             var id = Math.floor(Math.random()*1000001);
@@ -134,14 +132,14 @@ window.addEventListener("DOMContentLoaded", function() {
         toggleDisplay("on");
         var makeDiv = document.createElement("div");
         makeDiv.setAttribute("id", "sandwich");
-        var makeList = document.createElement("ul");
+        var makeList = document.createElement("ol");
         makeDiv.appendChild(makeList);
         document.body.appendChild(makeDiv);
-        for (var i=0, j=localStorage.length; i<j;i++) {
+        for (var i=0, j=localStorage.length-1; j>=i; j--) {
             var makeli = document.createElement("li");
             var links = document.createElement("li");
             makeList.appendChild(makeli);
-            var key = localStorage.key(i);
+            var key = localStorage.key(j);
             var value = localStorage.getItem(key);
             var obj = JSON.parse(value);
             var makeSubList = document.createElement("ul");
@@ -153,7 +151,7 @@ window.addEventListener("DOMContentLoaded", function() {
                 makeSubli.innerHTML = optSubText;
                 makeSubList.appendChild(links);
             }
-            makeLinks(localStorage.key(i), links);
+            makeLinks(localStorage.key(j), links);
         }
     };
 
@@ -568,7 +566,6 @@ window.addEventListener("DOMContentLoaded", function() {
             addressForm.style.display = "block"
         }
     };
-    
     makeBread();
     nm.addEventListener("click", noMeat);
     no.addEventListener("click", nothing);
